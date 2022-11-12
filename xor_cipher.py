@@ -73,14 +73,3 @@ def is_there_common_english_words(text: str) -> bool:
         if re.findall(f" {word} ", text):
             return True
     return False
-
-
-if __name__ == "__main__":
-    with open("cipher.txt", "r") as file:
-        cipher_string = file.read()
-        cipher_list = list(map(int, cipher_string.split(",")))
-
-    possible_keys = guess_key(cipher_list, 3)
-    print(possible_keys)
-    with open("decrypted_cipher.txt", "w") as out_file:
-        out_file.write(possible_keys[0][1])
