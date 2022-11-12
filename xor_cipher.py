@@ -44,7 +44,7 @@ def guess_key(encrypted_text: list, key_size: int) -> list:
     for encrypted_key in possible_keys:
         decrypted_codes = []
         is_text_readable = True
-        # The loop below is used to decode detect any forbidden symbol in the decrypted text as soon as possible
+        # The loop below is used to detect any forbidden symbol in the decrypted text as soon as possible
         # and instantly move to the next variant of the key
         for i in range(len(encrypted_text)):
             decrypted_symbol_code = encrypted_text[i] ^ encrypted_key[i % key_size]
